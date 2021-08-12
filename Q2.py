@@ -2,7 +2,17 @@ import psycopg2
 from openpyxl.workbook import Workbook
 import pandas as pd
 
+
+
+##Should have given some comments about the code and it's solution such as 
+##"Solution for Problem Statement2 and connecting the database"
+
+
+
+
 class Total_compensation:
+    
+    
     def compensation(self):
         try:
             conn = psycopg2.connect(
@@ -18,6 +28,9 @@ class Total_compensation:
             cur.execute(script)
             #cur.execute('select empno from jobhist')
 
+
+## below 3 lines of code can be done in a single line of code so to remove extra lines of code 
+## like   ----- df = pd.DataFrame(cur.fetchall())
 
 
             columns = [desc[0] for desc in cur.description]
@@ -42,3 +55,9 @@ if __name__=='__main__':
     cur = None
     comp = Total_compensation()
     comp.compensation()
+    
+    
+    
+    
+    
+    ## you should have written test cases for unit testing ....
