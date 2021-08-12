@@ -3,11 +3,23 @@ import psycopg2
 from openpyxl.workbook import Workbook
 import pandas as pd
 
+
+##you should have wriiten some comments for some clearity to understand your code more readble.
+
+
+
+
 class employees:
 
 
     def emp(self):
         try:
+            
+            ## you have created the postgres sql connection for each python file separately 
+            ## u should have created a spearte database connection file to avoid some extra lines of code so try to remove redundancy.
+            ## import that same dbconnection python in other files
+            
+            
             conn = psycopg2.connect(
 
             database="SQL_Assig",
